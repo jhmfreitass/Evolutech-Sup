@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Usuários - Suporte TI</title>
+
+    <link
+        rel="icon"
+        href="imgs/evolutech.png.jpeg"
+    >
+
+    <link
+        rel="stylesheet"
+        href="./css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="sistema">
+
+
+    <!-- =====================================================
+         MENU LATERAL
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- LOGO -->
+
+        <div class="logo">
+
+            <div class="logo-icone">
+                🛠️
+            </div>
+
+            <div>
+
+                <h1>
+                    SUPORTE TI
+                </h1>
+
+                <span>
+                    Central de Atendimento
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- MENU -->
+
+        <nav class="menu">
+
+
+            <p class="menu-titulo">
+                MENU PRINCIPAL
+            </p>
+
+
+            <a
+                href="index.html"
+                class="menu-item"
+            >
+                <span>🏠</span>
+                Início
+            </a>
+
+
+            <a
+                href="chamados.html"
+                class="menu-item"
+            >
+                <span>🎫</span>
+                Chamados
+            </a>
+
+
+            <a
+                href="novo-chamado.html"
+                class="menu-item"
+            >
+                <span>➕</span>
+                Novo Chamado
+            </a>
+
+
+            <p class="menu-titulo menu-gerenciamento">
+                GERENCIAMENTO
+            </p>
+
+
+            <a
+                href="usuarios.html"
+                class="menu-item gerenciamento-item ativo"
+            >
+                <span>👥</span>
+                Usuários
+            </a>
+
+
+            <a
+                href="tecnicos.html"
+                class="menu-item gerenciamento-item"
+            >
+                <span>🛠️</span>
+                Técnicos
+            </a>
+
+
+            <a
+                href="relatorios.html"
+                class="menu-item gerenciamento-item"
+            >
+                <span>📊</span>
+                Relatórios
+            </a>
+
+
+            <p class="menu-titulo">
+                SISTEMA
+            </p>
+
+
+            <a
+                href="configuracoes.html"
+                class="menu-item"
+            >
+                <span>⚙️</span>
+                Configurações
+            </a>
+
+        </nav>
+
+
+        <!-- =================================================
+             USUÁRIO LOGADO
+        ================================================== -->
+
+        <div class="usuario-menu">
+
+
+            <div
+                class="avatar"
+                id="avatarUsuario"
+            >
+                ?
+            </div>
+
+
+            <div class="usuario-info">
+
+                <strong id="nomeUsuario">
+                    Visitante
+                </strong>
+
+                <span id="cargoUsuario">
+                    Sem login
+                </span>
+
+            </div>
+
+
+            <button
+                id="btnSair"
+                type="button"
+            >
+                ⋮
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         CONTEÚDO
+    ====================================================== -->
+
+    <main class="conteudo">
+
+
+        <!-- =================================================
+             TOPO
+        ================================================== -->
+
+        <header class="topo">
+
+
+            <div>
+
+                <h2>
+                    Usuários
+                </h2>
+
+                <p>
+                    Gerencie os usuários cadastrados no sistema.
+                </p>
+
+            </div>
+
+
+            <div class="topo-direita">
+
+
+                <div class="perfil">
+
+
+                    <div
+                        class="avatar pequeno"
+                        id="avatarTopo"
+                    >
+                        ?
+                    </div>
+
+
+                    <div>
+
+                        <strong id="nomeTopo">
+                            Visitante
+                        </strong>
+
+                        <span id="cargoTopo">
+                            Sem login
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             PAINEL DE USUÁRIOS
+        ================================================== -->
+
+        <section class="painel">
+
+
+            <div class="painel-topo">
+
+
+                <div>
+
+                    <h3>
+                        Usuários cadastrados
+                    </h3>
+
+                    <p>
+                        Visualize e gerencie as contas do sistema.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="cadastro.html"
+                    class="btn-principal"
+                    id="btnNovoUsuario"
+                >
+                    + Novo usuário
+                </a>
+
+            </div>
+
+
+            <!-- =================================================
+                 FILTROS
+            ================================================== -->
+
+            <div class="filtros">
+
+
+                <input
+                    type="text"
+                    id="pesquisaUsuario"
+                    placeholder="🔎 Pesquisar por nome ou e-mail..."
+                >
+
+
+                <select id="filtroCargo">
+
+
+                    <option value="">
+                        Todos os cargos
+                    </option>
+
+
+                    <option value="Administrador">
+                        Administrador
+                    </option>
+
+
+                    <option value="Técnico">
+                        Técnico
+                    </option>
+
+
+                    <option value="Funcionário">
+                        Funcionário
+                    </option>
+
+
+                    <option value="Usuário">
+                        Usuário
+                    </option>
+
+
+                </select>
+
+            </div>
+
+
+            <!-- =================================================
+                 TABELA
+            ================================================== -->
+
+            <div class="tabela-container">
+
+
+                <table>
+
+
+                    <thead>
+
+                        <tr>
+
+
+                            <th>
+                                ID
+                            </th>
+
+
+                            <th>
+                                Nome
+                            </th>
+
+
+                            <th>
+                                E-mail
+                            </th>
+
+
+                            <th>
+                                Senha
+                            </th>
+
+
+                            <th>
+                                Cargo
+                            </th>
+
+
+                            <th>
+                                Status
+                            </th>
+
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="listaUsuarios">
+
+                        <!--
+                            O usuarios.js irá
+                            colocar os usuários aqui.
+                        -->
+
+                    </tbody>
+
+
+                </table>
+
+            </div>
+
+
+            <!-- =================================================
+                 NENHUM USUÁRIO
+            ================================================== -->
+
+            <div
+                id="nenhumUsuario"
+                style="
+                    display: none;
+                    text-align: center;
+                    padding: 30px;
+                    color: #6b7280;
+                "
+            >
+
+                <p>
+                    Nenhum usuário cadastrado.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             RODAPÉ
+        ================================================== -->
+
+        <footer class="rodape">
+
+            <p>
+
+                © 2026 Grupo: João Henrique,
+                Rhuan Riquelme, Alleson Lopes
+                e Arthur Cabo.
+                Todos os direitos reservados.
+
+            </p>
+
+        </footer>
+
+
+    </main>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script src="./js/script.js"></script>
+
+<script src="./js/usuarios.js"></script>
+
+
+</body>
+
+</html>

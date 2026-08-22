@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <link
+        rel="icon"
+        href="imgs/evolutech.png.jpeg"
+    >
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Configurações - Evolutech Sup</title>
+
+
+    <style>
+
+        /*
+            Esconde o gerenciamento imediatamente
+            para evitar que apareça por alguns instantes
+        */
+
+        .menu-gerenciamento {
+            display: none;
+        }
+
+
+        /* Pequeno espaço entre o cargo e os botões */
+
+        .foto-acoes {
+            margin-top: 14px;
+        }
+
+
+        /* Espaçamento do cargo */
+
+        .cargo-badge {
+            display: inline-block;
+            margin-top: 4px;
+        }
+
+    </style>
+
+
+    <link
+        rel="stylesheet"
+        href="./css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="sistema">
+
+
+    <!-- MENU LATERAL -->
+
+    <aside class="sidebar">
+
+
+        <div class="logo">
+
+            <div class="logo-icone">
+                🛠️
+            </div>
+
+
+            <div>
+
+                <h1>
+                    EVOLUTECH SUP
+                </h1>
+
+                <span>
+                    Central de Atendimento
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav class="menu">
+
+
+            <p class="menu-titulo">
+                MENU PRINCIPAL
+            </p>
+
+
+            <a
+                href="index.html"
+                class="menu-item"
+            >
+                <span>🏠</span>
+                Início
+            </a>
+
+
+            <a
+                href="chamados.html"
+                class="menu-item"
+            >
+                <span>🎫</span>
+                Chamados
+            </a>
+
+
+            <a
+                href="novo-chamado.html"
+                class="menu-item"
+            >
+                <span>➕</span>
+                Novo Chamado
+            </a>
+
+
+            <!-- GERENCIAMENTO -->
+
+            <div class="menu-gerenciamento">
+
+
+                <p class="menu-titulo">
+                    GERENCIAMENTO
+                </p>
+
+
+                <a
+                    href="usuarios.html"
+                    class="menu-item"
+                >
+                    <span>👥</span>
+                    Usuários
+                </a>
+
+
+                <a
+                    href="tecnicos.html"
+                    class="menu-item"
+                >
+                    <span>🛠️</span>
+                    Técnicos
+                </a>
+
+
+                <a
+                    href="relatorios.html"
+                    class="menu-item"
+                >
+                    <span>📊</span>
+                    Relatórios
+                </a>
+
+            </div>
+
+
+            <p class="menu-titulo">
+                SISTEMA
+            </p>
+
+
+            <a
+                href="configuracoes.html"
+                class="menu-item ativo"
+            >
+                <span>⚙️</span>
+                Configurações
+            </a>
+
+        </nav>
+
+
+        <!-- USUÁRIO -->
+
+        <div class="usuario-menu">
+
+
+            <div
+                class="avatar"
+                id="avatarUsuario"
+            >
+                U
+            </div>
+
+
+            <div class="usuario-info">
+
+                <strong id="nomeUsuario">
+                    Usuário
+                </strong>
+
+                <span id="cargoUsuario">
+                    Usuário
+                </span>
+
+            </div>
+
+
+            <button
+                id="btnSair"
+                type="button"
+            >
+                ⋮
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- CONTEÚDO -->
+
+    <main class="conteudo">
+
+
+        <!-- TOPO -->
+
+        <header class="topo">
+
+
+            <div>
+
+                <h2>
+                    Configurações
+                </h2>
+
+                <p>
+                    Gerencie suas preferências e informações da conta.
+                </p>
+
+            </div>
+
+
+            <div class="topo-direita">
+
+               <div class="perfil">
+                
+                    <div
+                        class="avatar pequeno"
+                        id="avatarTopo"
+                    >
+                        U
+                    </div>
+
+
+                    <div>
+
+                        <strong id="nomeTopo">
+                            Usuário
+                        </strong>
+
+                        <span id="cargoTopo">
+                            Usuário
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- MEU PERFIL -->
+
+        <section class="configuracao-painel">
+
+
+            <div class="configuracao-cabecalho">
+
+                <div>
+
+                    <h3>
+                        👤 Meu perfil
+                    </h3>
+
+                    <p>
+                        Informações da sua conta.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="configuracao-conteudo">
+
+
+                <div class="perfil-config">
+
+
+                    <div
+                        class="avatar avatar-grande"
+                        id="avatarPerfil"
+                    >
+                        U
+                    </div>
+
+
+                    <div class="perfil-dados">
+
+
+                        <!-- NOME DO USUÁRIO -->
+
+                        <h3 id="perfilNome">
+                            Usuário
+                        </h3>
+
+
+                        <!-- E-MAIL -->
+
+                        <p id="perfilEmail">
+                            —
+                        </p>
+
+
+                        <!-- CARGO -->
+
+                        <span
+                            class="cargo-badge"
+                            id="perfilCargo"
+                        >
+                            Usuário
+                        </span>
+
+
+                        <!-- BOTÕES DA FOTO -->
+
+                        <div class="foto-acoes">
+
+
+                            <label
+                                for="fotoPerfil"
+                                class="btn-secundario"
+                            >
+                                📷 Alterar foto
+                            </label>
+
+
+                            <input
+                                type="file"
+                                id="fotoPerfil"
+                                accept="image/png,image/jpeg,image/webp"
+                                hidden
+                            >
+
+
+                            <button
+                                type="button"
+                                id="removerFoto"
+                                class="btn-cancelar"
+                            >
+                                Remover foto
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SEGURANÇA -->
+
+        <section class="configuracao-painel">
+
+
+            <div class="configuracao-cabecalho">
+
+                <div>
+
+                    <h3>
+                        🔒 Segurança
+                    </h3>
+
+                    <p>
+                        Altere a senha da sua conta.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <form id="formSenha">
+
+
+                <div class="form-grid">
+
+
+                    <div class="campo">
+
+                        <label for="senhaAtual">
+                            Senha atual
+                        </label>
+
+                        <input
+                            type="password"
+                            id="senhaAtual"
+                            placeholder="Digite sua senha atual"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label for="novaSenha">
+                            Nova senha
+                        </label>
+
+                        <input
+                            type="password"
+                            id="novaSenha"
+                            placeholder="Mínimo de 6 caracteres"
+                            minlength="6"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label for="confirmarSenha">
+                            Confirmar nova senha
+                        </label>
+
+                        <input
+                            type="password"
+                            id="confirmarSenha"
+                            placeholder="Digite novamente"
+                            minlength="6"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-acoes">
+
+                    <button
+                        type="submit"
+                        class="btn-principal"
+                    >
+                        Alterar senha
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- PREFERÊNCIAS -->
+
+        <section class="configuracao-painel">
+
+
+            <div class="configuracao-cabecalho">
+
+                <div>
+
+                    <h3>
+                        ⚙️ Preferências
+                    </h3>
+
+                    <p>
+                        Personalize o comportamento do sistema.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="preferencias">
+
+
+                <!-- NOTIFICAÇÕES -->
+
+                <div class="preferencia">
+
+                    <div class="preferencia-icone">
+                        🔔
+                    </div>
+
+
+                    <div class="preferencia-info">
+
+                        <strong>
+                            Notificações
+                        </strong>
+
+                        <span>
+                            Receber notificações do sistema por e-mail.
+                        </span>
+
+                    </div>
+
+
+                    <label class="switch">
+
+                        <input
+                            type="checkbox"
+                            id="notificacoes"
+                        >
+
+                        <span class="slider"></span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- MODO ESCURO -->
+
+                <div class="preferencia">
+
+                    <div class="preferencia-icone">
+                        🌙
+                    </div>
+
+
+                    <div class="preferencia-info">
+
+                        <strong>
+                            Modo escuro
+                        </strong>
+
+                        <span>
+                            Alterar a aparência do sistema.
+                        </span>
+
+                    </div>
+
+
+                    <label class="switch">
+
+                        <input
+                            type="checkbox"
+                            id="modoEscuro"
+                        >
+
+                        <span class="slider"></span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- INFORMAÇÕES -->
+
+        <section class="configuracao-painel">
+
+
+            <div class="configuracao-cabecalho">
+
+                <div>
+
+                    <h3>
+                        ℹ️ Informações
+                    </h3>
+
+                    <p>
+                        Informações sobre o sistema.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="informacoes-sistema">
+
+
+                <div>
+
+                    <span>
+                        Sistema
+                    </span>
+
+                    <strong>
+                        Evolutech Sup
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Versão
+                    </span>
+
+                    <strong>
+                        1.0.0
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Ano
+                    </span>
+
+                    <strong>
+                        2026
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RODAPÉ -->
+
+        <footer class="rodape">
+
+            <p>
+                © 2026 Grupo: João Henrique,
+                Rhuan Riquelme,
+                Alleson Lopes e Arthur Cabo.
+                Todos os direitos reservados.
+            </p>
+
+        </footer>
+
+    </main>
+
+</div>
+
+
+<script src="./js/script.js"></script>
+
+<script src="./js/configuracoes.js"></script>
+
+
+</body>
+
+</html>
+

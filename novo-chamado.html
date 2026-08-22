@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<link rel="icon" href="imgs/evolutech.png.jpeg">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Novo Chamado - Evolutech Sup</title>
+
+    <link
+        rel="stylesheet"
+        href="./css/style.css"
+    >
+
+    <style>
+        .menu-gerenciamento {
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="sistema">
+
+<aside class="sidebar">
+
+    <div class="logo">
+
+        <div class="logo-icone">
+            🛠️
+        </div>
+
+        <div>
+
+            <h1>
+                EVOLUTECH SUP
+            </h1>
+
+            <span>
+                Central de Atendimento
+            </span>
+
+        </div>
+
+    </div>
+
+    <nav class="menu">
+
+        <p class="menu-titulo">
+            MENU PRINCIPAL
+        </p>
+
+        <a
+            href="index.html"
+            class="menu-item"
+        >
+            <span>🏠</span>
+            Início
+        </a>
+
+        <a
+            href="chamados.html"
+            class="menu-item"
+        >
+            <span>🎫</span>
+            Chamados
+        </a>
+
+        <a
+            href="novo-chamado.html"
+            class="menu-item ativo"
+        >
+            <span>➕</span>
+            Novo Chamado
+        </a>
+
+        <div class="menu-gerenciamento">
+
+            <p class="menu-titulo">
+                GERENCIAMENTO
+            </p>
+
+            <a
+                href="usuarios.html"
+                class="menu-item"
+            >
+                <span>👥</span>
+                Usuários
+            </a>
+
+            <a
+                href="tecnicos.html"
+                class="menu-item"
+            >
+                <span>🛠️</span>
+                Técnicos
+            </a>
+
+            <a
+                href="relatorios.html"
+                class="menu-item"
+            >
+                <span>📊</span>
+                Relatórios
+            </a>
+
+        </div>
+
+        <p class="menu-titulo">
+            SISTEMA
+        </p>
+
+        <a
+            href="configuracoes.html"
+            class="menu-item"
+        >
+            <span>⚙️</span>
+            Configurações
+        </a>
+
+    </nav>
+
+    <div class="usuario-menu">
+
+        <div
+            class="avatar"
+            id="avatarUsuario"
+        >
+            U
+        </div>
+
+        <div class="usuario-info">
+
+            <strong id="nomeUsuario">
+                Usuário
+            </strong>
+
+            <span id="cargoUsuario">
+                Usuário
+            </span>
+
+        </div>
+
+        <button
+            id="btnSair"
+            type="button"
+        >
+            ⋮
+        </button>
+
+    </div>
+
+</aside>
+
+<main class="conteudo">
+
+    <header class="topo">
+
+        <div>
+
+            <h2>
+                Novo chamado
+            </h2>
+
+            <p>
+                Abra uma nova solicitação para o Evolutech Sup.
+            </p>
+
+        </div>
+
+        <div class="topo-direita">
+
+            <div class="perfil">
+
+                <div
+                    class="avatar pequeno"
+                    id="avatarTopo"
+                >
+                    U
+                </div>
+
+                <div>
+
+                    <strong id="nomeTopo">
+                        Usuário
+                    </strong>
+
+                    <span id="cargoTopo">
+                        Usuário
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <section class="formulario-painel">
+
+        <div class="painel-cabecalho">
+
+            <h3>
+                Abrir novo chamado
+            </h3>
+
+            <p>
+                Preencha as informações abaixo para registrar sua solicitação no Evolutech Sup.
+            </p>
+
+        </div>
+
+        <form id="formChamado">
+
+            <div class="form-grid">
+
+                <div class="campo">
+
+                    <label for="titulo">
+                        Título
+                    </label>
+
+                    <input
+                        type="text"
+                        id="titulo"
+                        placeholder="Ex: Computador não liga"
+                        required
+                    >
+
+                </div>
+
+                <div class="campo">
+
+                    <label for="categoria">
+                        Categoria
+                    </label>
+
+                    <select
+                        id="categoria"
+                        required
+                    >
+
+                        <option value="">
+                            Selecione
+                        </option>
+
+                        <option value="Hardware">
+                            Hardware
+                        </option>
+
+                        <option value="Software">
+                            Software
+                        </option>
+
+                        <option value="Rede">
+                            Rede
+                        </option>
+
+                        <option value="Acesso">
+                            Acesso
+                        </option>
+
+                        <option value="Outro">
+                            Outro
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="campo">
+
+                    <label for="prioridade">
+                        Prioridade
+                    </label>
+
+                    <select
+                        id="prioridade"
+                        required
+                    >
+
+                        <option value="">
+                            Selecione
+                        </option>
+
+                        <option value="Alta">
+                            Alta
+                        </option>
+
+                        <option value="Média">
+                            Média
+                        </option>
+
+                        <option value="Baixa">
+                            Baixa
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <div class="campo">
+
+                <label for="descricao">
+                    Descrição
+                </label>
+
+                <textarea
+                    id="descricao"
+                    placeholder="Descreva o problema ou solicitação..."
+                    required
+                ></textarea>
+
+            </div>
+
+            <div class="form-acoes">
+
+                <a
+                    href="chamados.html"
+                    class="btn-cancelar"
+                >
+                    Cancelar
+                </a>
+
+                <button
+                    type="submit"
+                    class="btn-principal"
+                >
+                    Criar chamado
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+    <footer class="rodape">
+
+        <p>
+            © 2026 Grupo: João Henrique,
+            Rhuan Riquelme,
+            Alleson Lopes e Arthur Cabo.
+            Todos os direitos reservados.
+        </p>
+
+    </footer>
+
+</main>
+
+</div>
+
+<script src="./js/script.js"></script>
+
+<script src="./js/novo-chamado.js"></script>
+
+</body>
+
+</html>
+

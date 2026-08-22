@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <link
+        rel="icon"
+        href="imgs/evolutech.png.jpeg"
+    >
+
+    <title>
+        Login - Evolutech SUP
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="./css/login.css"
+    >
+
+</head>
+
+
+<body>
+
+    <main class="login-container">
+
+
+        <!-- CARD DE LOGIN -->
+
+        <section class="login-card">
+
+
+            <!-- LOGO -->
+
+            <div class="logo">
+
+                <div class="logo-icone">
+                    🛠️
+                </div>
+
+                <h1>
+                    EVOLUTECH SUP
+                </h1>
+
+                <p>
+                    Central de Atendimento
+                </p>
+
+            </div>
+
+
+            <!-- TÍTULO -->
+
+            <div class="login-titulo">
+
+                <h2>
+                    Bem-vindo!
+                </h2>
+
+                <p>
+                    Entre na sua conta para continuar
+                </p>
+
+            </div>
+
+
+            <!-- FORMULÁRIO -->
+
+            <form id="loginForm">
+
+
+                <!-- E-MAIL -->
+
+                <div class="campo">
+
+                    <label for="email">
+                        E-mail
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Digite seu e-mail"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- SENHA -->
+
+                <div class="campo">
+
+                    <label for="senha">
+                        Senha
+                    </label>
+
+                    <input
+                        type="password"
+                        id="senha"
+                        placeholder="Digite sua senha"
+                        minlength="6"
+                        autocomplete="current-password"
+                        required
+                    >
+
+
+                    <!-- MOSTRAR SENHA -->
+
+                    <label
+                        class="lembrar mostrar-senha"
+                        for="mostrarSenha"
+                    >
+
+                        <input
+                            type="checkbox"
+                            id="mostrarSenha"
+                        >
+
+                        Mostrar senha
+
+                    </label>
+
+                </div>
+
+
+                <!-- OPÇÕES -->
+
+                <div class="opcoes">
+
+
+                    <!-- LEMBRAR DE MIM -->
+
+                    <label
+                        class="lembrar"
+                        for="lembrar"
+                    >
+
+                        <input
+                            type="checkbox"
+                            id="lembrar"
+                        >
+
+                        Lembrar de mim
+
+                    </label>
+
+
+                    <!-- RECUPERAR SENHA -->
+
+                    <a href="recuperar-senha.html">
+                        Esqueci minha senha
+                    </a>
+
+                </div>
+
+
+                <!-- MENSAGEM -->
+
+                <p
+                    id="mensagemLogin"
+                    style="
+                        display: none;
+                        margin: 10px 0;
+                        text-align: center;
+                    "
+                >
+                </p>
+
+
+                <!-- BOTÃO LOGIN -->
+
+                <button
+                    type="submit"
+                    class="btn-login"
+                >
+                    Entrar
+                </button>
+
+
+            </form>
+
+
+            <!-- CADASTRO -->
+
+            <div class="cadastro">
+
+                <p>
+                    Ainda não possui uma conta?
+                </p>
+
+                <a href="cadastro.html">
+                    Solicitar cadastro
+                </a>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- RODAPÉ -->
+
+        <footer class="login-footer">
+
+            © 2026 Grupo: João Henrique,
+            Rhuan Riquelme, Alleson Lopes
+            e Arthur Cabo.
+
+        </footer>
+
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="./js/login.js"></script>
+
+</body>
+
+</html>
+

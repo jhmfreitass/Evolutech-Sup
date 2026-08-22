@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <link
+        rel="icon"
+        href="imgs/evolutech.png.jpeg"
+    >
+
+    <title>Chamados - Evolutech Sup</title>
+
+    <link
+        rel="stylesheet"
+        href="./css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="sistema">
+
+
+    <!-- =================================================
+         MENU LATERAL
+    ================================================== -->
+
+    <aside class="sidebar">
+
+
+        <div class="logo">
+
+            <div class="logo-icone">
+
+                🛠️
+
+            </div>
+
+
+            <div>
+
+                <h1>
+
+                    EVOLUTECH SUP
+
+                </h1>
+
+
+                <span>
+
+                    Central de Atendimento
+
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <nav class="menu">
+
+
+            <p class="menu-titulo">
+
+                MENU PRINCIPAL
+
+            </p>
+
+
+
+            <a
+                href="index.html"
+                class="menu-item"
+            >
+
+                <span>🏠</span>
+
+                Início
+
+            </a>
+
+
+
+            <a
+                href="chamados.html"
+                class="menu-item ativo"
+            >
+
+                <span>🎫</span>
+
+                Chamados
+
+            </a>
+
+
+
+            <a
+                href="novo-chamado.html"
+                class="menu-item"
+            >
+
+                <span>➕</span>
+
+                Novo Chamado
+
+            </a>
+
+
+
+            <!-- =================================================
+                 GERENCIAMENTO
+            ================================================== -->
+
+            <div class="menu-gerenciamento">
+
+
+                <p class="menu-titulo">
+
+                    GERENCIAMENTO
+
+                </p>
+
+
+
+                <a
+                    href="usuarios.html"
+                    class="menu-item gerenciamento-item"
+                >
+
+                    <span>👥</span>
+
+                    Usuários
+
+                </a>
+
+
+
+                <a
+                    href="tecnicos.html"
+                    class="menu-item gerenciamento-item"
+                >
+
+                    <span>🛠️</span>
+
+                    Técnicos
+
+                </a>
+
+
+
+                <a
+                    href="relatorios.html"
+                    class="menu-item gerenciamento-item"
+                >
+
+                    <span>📊</span>
+
+                    Relatórios
+
+                </a>
+
+
+            </div>
+
+
+
+            <p class="menu-titulo">
+
+                SISTEMA
+
+            </p>
+
+
+
+            <a
+                href="configuracoes.html"
+                class="menu-item"
+            >
+
+                <span>⚙️</span>
+
+                Configurações
+
+            </a>
+
+
+        </nav>
+
+
+
+        <!-- =================================================
+             USUÁRIO LOGADO
+        ================================================== -->
+
+        <div class="usuario-menu">
+
+
+            <div
+                class="avatar"
+                id="avatarUsuario"
+            >
+
+                U
+
+            </div>
+
+
+
+            <div class="usuario-info">
+
+                <strong id="nomeUsuario">
+
+                    Usuário
+
+                </strong>
+
+
+                <span id="cargoUsuario">
+
+                    Usuário
+
+                </span>
+
+            </div>
+
+
+
+            <button
+                id="btnSair"
+                type="button"
+            >
+
+                ⋮
+
+            </button>
+
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- =================================================
+         CONTEÚDO
+    ================================================== -->
+
+    <main class="conteudo">
+
+
+
+        <!-- =================================================
+             TOPO
+        ================================================== -->
+
+        <header class="topo">
+
+
+            <div>
+
+                <h2>
+
+                    Chamados
+
+                </h2>
+
+
+                <p>
+
+                    Consulte e acompanhe os chamados.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="topo-direita">
+
+
+                <div class="perfil">
+
+
+                    <div
+                        class="avatar pequeno"
+                        id="avatarTopo"
+                    >
+
+                        U
+
+                    </div>
+
+
+
+                    <div>
+
+                        <strong id="nomeTopo">
+
+                            Usuário
+
+                        </strong>
+
+
+                        <span id="cargoTopo">
+
+                            Usuário
+
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- =================================================
+             PAINEL DE CHAMADOS
+        ================================================== -->
+
+        <section class="painel">
+
+
+            <div class="painel-topo">
+
+
+                <div>
+
+                    <h3>
+
+                        Chamados registrados
+
+                    </h3>
+
+
+                    <p>
+
+                        Acompanhe as solicitações cadastradas no sistema.
+
+                    </p>
+
+                </div>
+
+
+
+                <a
+                    href="novo-chamado.html"
+                    class="btn-principal"
+                >
+
+                    + Novo chamado
+
+                </a>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 FILTROS
+            ================================================== -->
+
+            <div class="filtros">
+
+
+                <input
+                    type="text"
+                    id="buscaChamado"
+                    placeholder="Pesquisar chamado..."
+                >
+
+
+
+                <select id="filtroStatus">
+
+
+                    <option value="">
+
+                        Todos os status
+
+                    </option>
+
+
+
+                    <option value="Aberto">
+
+                        Aberto
+
+                    </option>
+
+
+
+                    <option value="Andamento">
+
+                        Em andamento
+
+                    </option>
+
+
+
+                    <option value="Resolvido">
+
+                        Resolvido
+
+                    </option>
+
+
+                </select>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 TABELA
+            ================================================== -->
+
+            <div class="tabela-container">
+
+
+                <table>
+
+
+                    <thead>
+
+
+                        <tr>
+
+                            <th>
+                                ID
+                            </th>
+
+                            <th>
+                                Título
+                            </th>
+
+                            <th>
+                                Categoria
+                            </th>
+
+                            <th>
+                                Prioridade
+                            </th>
+
+                            <th>
+                                Solicitante
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Data
+                            </th>
+
+                        </tr>
+
+
+                    </thead>
+
+
+
+                    <tbody id="listaChamados">
+
+                    </tbody>
+
+
+                </table>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             RODAPÉ
+        ================================================== -->
+
+        <footer class="rodape">
+
+
+            <p>
+
+                © 2026 Grupo: João Henrique,
+
+                Rhuan Riquelme,
+
+                Alleson Lopes e Arthur Cabo.
+
+                Todos os direitos reservados.
+
+            </p>
+
+
+        </footer>
+
+
+    </main>
+
+
+</div>
+
+
+
+<!-- =================================================
+     JAVASCRIPT
+================================================== -->
+
+<script src="./js/script.js"></script>
+
+<script src="./js/chamados.js"></script>
+
+
+</body>
+
+</html>
+

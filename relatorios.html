@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <link
+        rel="icon"
+        href="imgs/evolutech.png.jpeg"
+    >
+
+    <title>Relatórios - Evolutech Sup</title>
+
+    <link
+        rel="stylesheet"
+        href="./css/style.css"
+    >
+
+    <style>
+
+        /* =====================================================
+           RELATÓRIOS
+        ===================================================== */
+
+        .relatorios-pagina {
+            padding-bottom: 30px;
+        }
+
+        .relatorio-cabecalho {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .relatorio-cabecalho h2 {
+            margin-bottom: 6px;
+        }
+
+        .relatorio-cabecalho p {
+            margin: 0;
+        }
+
+        .btn-atualizar {
+            border: none;
+            background: #2563eb;
+            color: white;
+            padding: 11px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .btn-atualizar:hover {
+            background: #1d4ed8;
+        }
+
+        /* CARDS */
+
+        .relatorio-cards {
+            display: grid;
+            grid-template-columns:
+                repeat(4, minmax(0, 1fr));
+
+            gap: 18px;
+            margin-bottom: 25px;
+        }
+
+        .relatorio-card {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 14px;
+            padding: 22px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        }
+
+        .relatorio-icone {
+            width: 52px;
+            height: 52px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            background: #eff6ff;
+        }
+
+        .relatorio-card span {
+            display: block;
+            color: #6b7280;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .relatorio-card strong {
+            display: block;
+            font-size: 28px;
+            color: #111827;
+        }
+
+        /* GRID PRINCIPAL */
+
+        .relatorio-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .relatorio-box {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 14px;
+            padding: 22px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        }
+
+        .relatorio-box h3 {
+            margin: 0 0 5px;
+            color: #111827;
+        }
+
+        .relatorio-box > p {
+            margin-top: 0;
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        /* BARRAS */
+
+        .barra-relatorio {
+            margin-top: 22px;
+        }
+
+        .barra-cabecalho {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 7px;
+            font-size: 14px;
+        }
+
+        .barra-fundo {
+            height: 12px;
+            background: #e5e7eb;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .barra-preenchida {
+            height: 100%;
+            width: 0%;
+            border-radius: 20px;
+            transition: width .4s ease;
+        }
+
+        .barra-aberto {
+            background: #ef4444;
+        }
+
+        .barra-andamento {
+            background: #f59e0b;
+        }
+
+        .barra-resolvido {
+            background: #22c55e;
+        }
+
+        /* PRIORIDADES */
+
+        .prioridade-lista {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-top: 20px;
+        }
+
+        .prioridade-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 13px 15px;
+            border-radius: 9px;
+            background: #f8fafc;
+        }
+
+        .prioridade-nome {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .prioridade-ponto {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .prioridade-alta {
+            background: #ef4444;
+        }
+
+        .prioridade-media {
+            background: #f59e0b;
+        }
+
+        .prioridade-baixa {
+            background: #22c55e;
+        }
+
+        /* FILTROS */
+
+        .relatorio-filtros {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .relatorio-filtros input,
+        .relatorio-filtros select {
+            padding: 11px 13px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            background: #ffffff;
+            color: #111827;
+            outline: none;
+        }
+
+        .relatorio-filtros input {
+            flex: 1;
+        }
+
+        /* STATUS */
+
+        .status-relatorio {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        .status-aberto {
+            background: #fee2e2;
+            color: #b91c1c;
+        }
+
+        .status-andamento {
+            background: #fef3c7;
+            color: #b45309;
+        }
+
+        .status-resolvido {
+            background: #dcfce7;
+            color: #15803d;
+        }
+
+        /* DARK MODE */
+
+        body.modo-escuro .relatorio-card,
+        body.modo-escuro .relatorio-box {
+            background: #1f2937;
+            border-color: #374151;
+            color: #f9fafb;
+        }
+
+        body.modo-escuro .relatorio-card span,
+        body.modo-escuro .relatorio-box > p {
+            color: #9ca3af;
+        }
+
+        body.modo-escuro .relatorio-card strong,
+        body.modo-escuro .relatorio-box h3 {
+            color: #f9fafb;
+        }
+
+        body.modo-escuro .prioridade-item {
+            background: #111827;
+        }
+
+        body.modo-escuro .relatorio-filtros input,
+        body.modo-escuro .relatorio-filtros select {
+            background: #1f2937;
+            color: #f9fafb;
+            border-color: #4b5563;
+        }
+
+        body.modo-escuro .barra-fundo {
+            background: #374151;
+        }
+
+        /* RESPONSIVO */
+
+        @media (max-width: 1000px) {
+
+            .relatorio-cards {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .relatorio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            .relatorio-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .relatorio-cabecalho {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .relatorio-filtros {
+                flex-direction: column;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<div class="sistema">
+
+
+    <!-- =====================================================
+         MENU
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-icone">
+                🛠️
+            </div>
+
+            <div>
+
+                <h1>
+                    EVOLUTECH SUP
+                </h1>
+
+                <span>
+                    Central de Atendimento
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav class="menu">
+
+            <p class="menu-titulo">
+                MENU PRINCIPAL
+            </p>
+
+            <a
+                href="index.html"
+                class="menu-item"
+            >
+                <span>🏠</span>
+                Início
+            </a>
+
+            <a
+                href="chamados.html"
+                class="menu-item"
+            >
+                <span>🎫</span>
+                Chamados
+            </a>
+
+            <a
+                href="novo-chamado.html"
+                class="menu-item"
+            >
+                <span>➕</span>
+                Abrir Chamado
+            </a>
+
+
+            <div class="menu-gerenciamento">
+
+                <p class="menu-titulo">
+                    GERENCIAMENTO
+                </p>
+
+                <a
+                    href="usuarios.html"
+                    class="menu-item"
+                >
+                    <span>👥</span>
+                    Usuários
+                </a>
+
+                <a
+                    href="tecnicos.html"
+                    class="menu-item"
+                >
+                    <span>🛠️</span>
+                    Técnicos
+                </a>
+
+                <a
+                    href="relatorios.html"
+                    class="menu-item ativo"
+                >
+                    <span>📊</span>
+                    Relatórios
+                </a>
+
+            </div>
+
+
+            <p class="menu-titulo">
+                SISTEMA
+            </p>
+
+            <a
+                href="configuracoes.html"
+                class="menu-item"
+            >
+                <span>⚙️</span>
+                Configurações
+            </a>
+
+        </nav>
+
+
+        <!-- USUÁRIO -->
+
+        <div class="usuario-menu">
+
+            <div
+                class="avatar"
+                id="avatarUsuario"
+            >
+                U
+            </div>
+
+            <div class="usuario-info">
+
+                <strong id="nomeUsuario">
+                    Usuário
+                </strong>
+
+                <span id="cargoUsuario">
+                    Usuário
+                </span>
+
+            </div>
+
+            <button
+                id="btnSair"
+                type="button"
+            >
+                ⋮
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         CONTEÚDO
+    ====================================================== -->
+
+    <main class="conteudo relatorios-pagina">
+
+
+        <header class="topo">
+
+            <div>
+
+                <h2>
+                    Relatórios
+                </h2>
+
+                <p>
+                    Acompanhe em tempo real o desempenho dos chamados.
+                </p>
+
+            </div>
+
+        </header>
+
+
+        <!-- CABEÇALHO -->
+
+        <div class="relatorio-cabecalho">
+
+            <div>
+
+                <strong>
+                    Visão geral do suporte
+                </strong>
+
+                <p>
+                    Os indicadores abaixo são calculados diretamente
+                    a partir dos chamados cadastrados.
+                </p>
+
+            </div>
+
+            <button
+                class="btn-atualizar"
+                id="btnAtualizar"
+            >
+                🔄 Atualizar
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             CARDS
+        ================================================== -->
+
+        <section class="relatorio-cards">
+
+            <div class="relatorio-card">
+
+                <div class="relatorio-icone">
+                    🎫
+                </div>
+
+                <div>
+
+                    <span>
+                        Total de chamados
+                    </span>
+
+                    <strong id="totalChamados">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="relatorio-card">
+
+                <div class="relatorio-icone">
+                    🔴
+                </div>
+
+                <div>
+
+                    <span>
+                        Chamados abertos
+                    </span>
+
+                    <strong id="totalAbertos">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="relatorio-card">
+
+                <div class="relatorio-icone">
+                    ⏳
+                </div>
+
+                <div>
+
+                    <span>
+                        Em andamento
+                    </span>
+
+                    <strong id="totalAndamento">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="relatorio-card">
+
+                <div class="relatorio-icone">
+                    ✅
+                </div>
+
+                <div>
+
+                    <span>
+                        Resolvidos
+                    </span>
+
+                    <strong id="totalResolvidos">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             GRÁFICOS / INDICADORES
+        ================================================== -->
+
+        <section class="relatorio-grid">
+
+
+            <div class="relatorio-box">
+
+                <h3>
+                    Situação dos chamados
+                </h3>
+
+                <p>
+                    Distribuição atual dos chamados.
+                </p>
+
+
+                <div class="barra-relatorio">
+
+                    <div class="barra-cabecalho">
+
+                        <span>
+                            Abertos
+                        </span>
+
+                        <strong id="numeroAbertos">
+                            0
+                        </strong>
+
+                    </div>
+
+                    <div class="barra-fundo">
+
+                        <div
+                            class="barra-preenchida barra-aberto"
+                            id="barraAberto"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="barra-relatorio">
+
+                    <div class="barra-cabecalho">
+
+                        <span>
+                            Em andamento
+                        </span>
+
+                        <strong id="numeroAndamento">
+                            0
+                        </strong>
+
+                    </div>
+
+                    <div class="barra-fundo">
+
+                        <div
+                            class="barra-preenchida barra-andamento"
+                            id="barraAndamento"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="barra-relatorio">
+
+                    <div class="barra-cabecalho">
+
+                        <span>
+                            Resolvidos
+                        </span>
+
+                        <strong id="numeroResolvidos">
+                            0
+                        </strong>
+
+                    </div>
+
+                    <div class="barra-fundo">
+
+                        <div
+                            class="barra-preenchida barra-resolvido"
+                            id="barraResolvido"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="relatorio-box">
+
+                <h3>
+                    Prioridades
+                </h3>
+
+                <p>
+                    Quantidade de chamados por prioridade.
+                </p>
+
+
+                <div class="prioridade-lista">
+
+                    <div class="prioridade-item">
+
+                        <div class="prioridade-nome">
+
+                            <div class="prioridade-ponto prioridade-alta"></div>
+
+                            <span>
+                                Alta
+                            </span>
+
+                        </div>
+
+                        <strong id="prioridadeAlta">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="prioridade-item">
+
+                        <div class="prioridade-nome">
+
+                            <div class="prioridade-ponto prioridade-media"></div>
+
+                            <span>
+                                Média
+                            </span>
+
+                        </div>
+
+                        <strong id="prioridadeMedia">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="prioridade-item">
+
+                        <div class="prioridade-nome">
+
+                            <div class="prioridade-ponto prioridade-baixa"></div>
+
+                            <span>
+                                Baixa
+                            </span>
+
+                        </div>
+
+                        <strong id="prioridadeBaixa">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CHAMADOS RECENTES
+        ================================================== -->
+
+        <section class="painel">
+
+            <div class="painel-topo">
+
+                <div>
+
+                    <h3>
+                        Chamados registrados
+                    </h3>
+
+                    <p>
+                        Dados atualizados diretamente do banco de dados.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="relatorio-filtros">
+
+                <input
+                    type="text"
+                    id="buscaRelatorio"
+                    placeholder="🔎 Pesquisar chamado..."
+                >
+
+
+                <select id="filtroRelatorio">
+
+                    <option value="">
+                        Todos os status
+                    </option>
+
+                    <option value="Aberto">
+                        Abertos
+                    </option>
+
+                    <option value="Andamento">
+                        Em andamento
+                    </option>
+
+                    <option value="Resolvido">
+                        Resolvidos
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="tabela-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                ID
+                            </th>
+
+                            <th>
+                                Título
+                            </th>
+
+                            <th>
+                                Categoria
+                            </th>
+
+                            <th>
+                                Prioridade
+                            </th>
+
+                            <th>
+                                Solicitante
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Data
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="listaRelatorio">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <footer class="rodape">
+
+            <p>
+
+                © 2026 Grupo: João Henrique,
+                Rhuan Riquelme,
+                Alleson Lopes e Arthur Cabo.
+
+                Todos os direitos reservados.
+
+            </p>
+
+        </footer>
+
+    </main>
+
+</div>
+
+
+<script src="./js/script.js"></script>
+
+<script src="./js/relatorios.js"></script>
+
+</body>
+
+</html>

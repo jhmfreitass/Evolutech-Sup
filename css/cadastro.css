@@ -1,0 +1,332 @@
+/* =========================
+   GERAL
+========================= */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f5f7fb;
+
+    color: #1f2937;
+
+    min-height: 100vh;
+
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.cadastro-container {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px;
+
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.cadastro-card {
+
+    width: 100%;
+
+    max-width: 430px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    padding: 40px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.08);
+
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+}
+
+
+.logo-icone {
+
+    width: 60px;
+
+    height: 60px;
+
+    margin: 0 auto 15px;
+
+    background: #2563eb;
+
+    color: white;
+
+    border-radius: 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 28px;
+
+}
+
+
+.logo h1 {
+
+    font-size: 20px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.logo p {
+
+    color: #6b7280;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================
+   TÍTULO
+========================= */
+
+.cadastro-titulo {
+
+    margin-bottom: 25px;
+
+}
+
+
+.cadastro-titulo h2 {
+
+    font-size: 24px;
+
+    margin-bottom: 7px;
+
+}
+
+
+.cadastro-titulo p {
+
+    color: #6b7280;
+
+    font-size: 14px;
+
+}
+
+
+/* =========================
+   CAMPOS
+========================= */
+
+.campo {
+
+    margin-bottom: 18px;
+
+}
+
+
+.campo label {
+
+    display: block;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+
+}
+
+
+.campo input {
+
+    width: 100%;
+
+    height: 45px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 8px;
+
+    padding: 0 14px;
+
+    font-size: 14px;
+
+    outline: none;
+
+}
+
+
+.campo input:focus {
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37, 99, 235, 0.1);
+
+}
+
+
+/* =========================
+   BOTÃO
+========================= */
+
+.btn-cadastro {
+
+    width: 100%;
+
+    height: 46px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+.btn-cadastro:hover {
+
+    background: #1d4ed8;
+
+}
+
+
+/* =========================
+   VOLTAR
+========================= */
+
+.voltar {
+
+    text-align: center;
+
+    margin-top: 22px;
+
+}
+
+
+.voltar a {
+
+    color: #2563eb;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+}
+
+
+.voltar a:hover {
+
+    text-decoration: underline;
+
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+.cadastro-footer {
+
+    margin-top: 25px;
+
+    background: #111827;
+
+    color: white;
+
+    width: 100%;
+
+    max-width: 430px;
+
+    padding: 15px;
+
+    border-radius: 8px;
+
+    text-align: center;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 500px) {
+
+    .cadastro-container {
+
+        padding: 20px;
+
+    }
+
+
+    .cadastro-card {
+
+        padding: 30px 25px;
+
+    }
+
+}

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<link rel="icon" href="imgs/evolutech.png.jpeg">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Cadastro - Suporte TI</title>
+
+    <link
+        rel="stylesheet"
+        href="./css/login.css"
+    >
+
+</head>
+
+<body>
+
+    <main class="login-container">
+
+        <section class="login-card">
+
+            <!-- LOGO -->
+
+            <div class="logo">
+
+                <div class="logo-icone">
+                    🛠️
+                </div>
+
+                <h1>
+                    SUPORTE TI
+                </h1>
+
+                <p>
+                    Central de Atendimento
+                </p>
+
+            </div>
+
+
+            <!-- TÍTULO -->
+
+            <div class="login-titulo">
+
+                <h2>
+                    Criar conta
+                </h2>
+
+                <p>
+                    Cadastre-se para acessar o sistema.
+                </p>
+
+            </div>
+
+
+            <!-- FORMULÁRIO -->
+
+            <form id="cadastroForm">
+
+                <!-- NOME -->
+
+                <div class="campo">
+
+                    <label for="nome">
+                        Nome
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nome"
+                        placeholder="Digite seu nome"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- SOBRENOME -->
+
+                <div class="campo">
+
+                    <label for="sobrenome">
+                        Sobrenome
+                    </label>
+
+                    <input
+                        type="text"
+                        id="sobrenome"
+                        placeholder="Digite seu sobrenome"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- E-MAIL -->
+
+                <div class="campo">
+
+                    <label for="email">
+                        E-mail
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Digite seu e-mail"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- SENHA -->
+
+                <div class="campo">
+
+                    <label for="senha">
+                        Senha
+                    </label>
+
+                    <input
+                        type="password"
+                        id="senha"
+                        placeholder="Mínimo de 6 caracteres"
+                        minlength="6"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- CONFIRMAR SENHA -->
+
+                <div class="campo">
+
+                    <label for="confirmarSenha">
+                        Confirmar senha
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirmarSenha"
+                        placeholder="Digite a senha novamente"
+                        minlength="6"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- BOTÃO -->
+
+                <button
+                    type="submit"
+                    class="btn-login"
+                >
+                    Criar conta
+                </button>
+
+            </form>
+
+
+            <!-- LOGIN -->
+
+            <div class="cadastro">
+
+                <p>
+                    Já possui uma conta?
+                </p>
+
+                <a href="login.html">
+                    Fazer login
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- RODAPÉ -->
+
+        <footer class="login-footer">
+
+            © 2026 Grupo: João Henrique, Rhuan Riquelme,
+            Alleson Lopes e Arthur Cabo.
+
+        </footer>
+
+    </main>
+
+
+    <script src="./js/cadastro.js"></script>
+
+</body>
+
+</html>
+

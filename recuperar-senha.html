@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <link rel="icon" href="imgs/evolutech.png.jpeg">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Recuperar senha - Suporte TI</title>
+
+    <link
+        rel="stylesheet"
+        href="./css/login.css"
+    >
+
+</head>
+
+<body>
+
+    <main class="login-container">
+
+        <section class="login-card">
+
+            <div class="logo">
+
+                <div class="logo-icone">
+                    🛠️
+                </div>
+
+                <h1>SUPORTE TI</h1>
+
+                <p>
+                    Central de Atendimento
+                </p>
+
+            </div>
+
+
+            <div class="login-titulo">
+
+                <h2>Recuperar senha</h2>
+
+                <p>
+                    Informe seus dados para criar uma nova senha.
+                </p>
+
+            </div>
+
+
+            <form id="recuperarSenhaForm">
+
+                <div class="campo">
+
+                    <label for="email">
+                        E-mail
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Digite seu e-mail"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="novaSenha">
+                        Nova senha
+                    </label>
+
+                    <input
+                        type="password"
+                        id="novaSenha"
+                        placeholder="Digite a nova senha"
+                        minlength="6"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="confirmarSenha">
+                        Confirmar nova senha
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirmarSenha"
+                        placeholder="Digite novamente"
+                        minlength="6"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn-login"
+                >
+                    Redefinir senha
+                </button>
+
+            </form>
+
+
+            <div class="cadastro">
+
+                <a href="login.html">
+                    ← Voltar para o login
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <footer class="login-footer">
+
+            © 2026 Grupo: João Henrique, Rhuan Riquelme,
+            Alleson Lopes e Arthur Cabo.
+
+        </footer>
+
+    </main>
+
+
+    <script src="./js/recuperar-senha.js"></script>
+
+</body>
+
+</html>
