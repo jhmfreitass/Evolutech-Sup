@@ -2,8 +2,17 @@
 // CONFIGURAÇÃO
 // =====================================================
 
+// Usa automaticamente o endereço onde o site está aberto.
+//
+// No Render:
+// https://evolutech-sup.onrender.com/api
+//
+// No computador:
+// http://localhost:3000/api
+
 const API_URL =
-    "http://localhost:3000/api";
+    `${window.location.origin}/api`;
+
 
 let chamadosRelatorio = [];
 
@@ -127,8 +136,8 @@ async function carregarRelatorio() {
                         <br><br>
 
                         Verifique se o
-                        <strong>server.js</strong>
-                        está rodando na porta 3000.
+                        <strong>servidor do sistema</strong>
+                        está funcionando.
 
                     </td>
 
@@ -592,3 +601,4 @@ function escaparHTML(
         );
 
 }
+
