@@ -15,8 +15,41 @@ app.use(express.json());
 
 
 // =====================================================
+// CORS
+// =====================================================
+
+app.use(
+    function (req, res, next) {
+
+        res.header(
+            "Access-Control-Allow-Origin",
+            "*"
+        );
+
+        res.header(
+            "Access-Control-Allow-Methods",
+            "GET,POST,PUT,DELETE,OPTIONS"
+        );
+
+        res.header(
+            "Access-Control-Allow-Headers",
+            "Content-Type"
+        );
+
+        if (req.method === "OPTIONS") {
+
+            return res.sendStatus(200);
+
+        }
+
+        next();
+
+    }
+);
+
+
+// =====================================================
 // TABELA DE USUÁRIOS
-// Garante que a tabela exista também no Render
 // =====================================================
 
 db.exec(`
@@ -43,40 +76,136 @@ console.log(
 
 
 // =====================================================
-// CORS
-// Permite que o Live Server converse com o Node
+// CRIAR ADMINISTRADOR PRINCIPAL
+//
+// A senha vem da variável ADMIN_SENHA
+// configurada no Render.
+//
+// No GitHub a senha NÃO fica salva.
 // =====================================================
 
-app.use(
-    function (req, res, next) {
+function criarAdministradorPrincipal() {
 
-        res.header(
-            "Access-Control-Allow-Origin",
-            "*"
+    const emailAdmin =
+        "jhmourafreitas@gmail.com";
+
+    const senhaAdmin =
+        process.env.ADMIN_SENHA;
+
+
+    /*
+     * Se ADMIN_SENHA ainda não estiver
+     * configurada, não cria nada.
+     */
+
+    if (!senhaAdmin) {
+
+        console.log(
+            "ADMIN_SENHA não configurada. Conta ADM automática não criada."
         );
 
-        res.header(
-            "Access-Control-Allow-Methods",
-            "GET,POST,PUT,DELETE,OPTIONS"
-        );
-
-        res.header(
-            "Access-Control-Allow-Headers",
-            "Content-Type"
-        );
+        return;
+    }
 
 
-        if (req.method === "OPTIONS") {
+    try {
 
-            return res.sendStatus(200);
+        const administrador =
+            db.prepare(`
 
+                SELECT
+
+                    id,
+                    email,
+                    cargo
+
+                FROM usuarios
+
+                WHERE LOWER(email) = LOWER(?)
+
+                LIMIT 1
+
+            `).get(
+                emailAdmin
+            );
+
+
+        /*
+         * Se a conta já existe,
+         * garante que ela continue sendo Administrador.
+         */
+
+        if (administrador) {
+
+            db.prepare(`
+
+                UPDATE usuarios
+
+                SET cargo = 'Administrador'
+
+                WHERE id = ?
+
+            `).run(
+                administrador.id
+            );
+
+
+            console.log(
+                "Administrador principal encontrado e confirmado."
+            );
+
+            return;
         }
 
 
-        next();
+        /*
+         * Se não existe, cria a conta.
+         */
+
+        db.prepare(`
+
+            INSERT INTO usuarios
+
+            (
+                nome,
+                email,
+                senha,
+                cargo
+            )
+
+            VALUES (?, ?, ?, ?)
+
+        `).run(
+
+            "João Henrique",
+
+            emailAdmin,
+
+            senhaAdmin,
+
+            "Administrador"
+
+        );
+
+
+        console.log(
+            "Administrador principal criado com sucesso!"
+        );
+
+
+    } catch (erro) {
+
+        console.error(
+            "Erro ao criar administrador principal:",
+            erro
+        );
 
     }
-);
+
+}
+
+
+criarAdministradorPrincipal();
 
 
 // =====================================================
@@ -322,10 +451,15 @@ app.post(
 
             const resultado =
                 inserir.run(
+
                     nome,
+
                     email,
+
                     senha,
+
                     cargoFinal
+
                 );
 
 
@@ -586,8 +720,11 @@ app.put(
                 WHERE id = ?
 
             `).run(
+
                 cargo,
+
                 id
+
             );
 
 
@@ -1064,8 +1201,11 @@ app.put(
                 WHERE id = ?
 
             `).run(
+
                 status,
+
                 id
+
             );
 
 
@@ -1191,8 +1331,11 @@ app.delete(
 // =====================================================
 
 app.listen(
+
     PORTA,
+
     "0.0.0.0",
+
     () => {
 
         console.log(
@@ -1200,5 +1343,6 @@ app.listen(
         );
 
     }
+
 );
 
