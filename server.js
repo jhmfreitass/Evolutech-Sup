@@ -4,7 +4,7 @@ const db = require("./banco");
 
 const app = express();
 
-const PORTA = 3000;
+const PORTA = process.env.PORT || 3000;
 
 
 // =====================================================
@@ -12,6 +12,34 @@ const PORTA = 3000;
 // =====================================================
 
 app.use(express.json());
+
+
+// =====================================================
+// TABELA DE USUÁRIOS
+// Garante que a tabela exista também no Render
+// =====================================================
+
+db.exec(`
+
+    CREATE TABLE IF NOT EXISTS usuarios (
+
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+        nome TEXT NOT NULL,
+
+        email TEXT NOT NULL UNIQUE,
+
+        senha TEXT NOT NULL,
+
+        cargo TEXT NOT NULL DEFAULT 'Usuário'
+
+    )
+
+`);
+
+console.log(
+    "Tabela de usuários pronta!"
+);
 
 
 // =====================================================
@@ -1157,17 +1185,20 @@ app.delete(
     }
 );
 
+
 // =====================================================
 // INICIAR SERVIDOR
 // =====================================================
 
 app.listen(
     PORTA,
+    "0.0.0.0",
     () => {
 
         console.log(
-            `Servidor funcionando em http://localhost:${PORTA}`
+            `Servidor funcionando na porta ${PORTA}`
         );
 
     }
 );
+
